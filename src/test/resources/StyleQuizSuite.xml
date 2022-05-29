@@ -1,0 +1,13 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="StyleQuizSuite">
+    <test name="welcome-page-card">
+        <classes>
+            <class name="org.corecode.scenarios.index.IndexTest"/>
+        </classes>
+    </test>
+    <test name="style-finder">
+        <classes>
+            <class name="org.corecode.scenarios.shop.finder.StyleFinderTest"/>
+        </classes>
+    </test>
+</suite>
