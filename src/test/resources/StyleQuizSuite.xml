@@ -5,9 +5,14 @@
             <class name="org.corecode.scenarios.index.IndexTest"/>
         </classes>
     </test>
-    <test name="style-finder">
+    <test name="control-buttons" preserve-order="true">
         <classes>
-            <class name="org.corecode.scenarios.shop.finder.StyleFinderTest"/>
+            <class name="org.corecode.scenarios.shop.finder.controlbuttons.StyleFinderTest"/>
+        </classes>
+    </test>
+    <test name="load-gallery" preserve-order="true">
+        <classes>
+            <class name="org.corecode.scenarios.shop.finder.loadgallery.LoadGalleryTest"/>
         </classes>
     </test>
 </suite>

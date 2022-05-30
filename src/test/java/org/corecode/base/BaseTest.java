@@ -74,7 +74,9 @@ public class BaseTest {
     public void scrollPage(){
         js.executeScript("window.scrollBy(0,350)");
     }
-
+    public void refreshBrowser(){
+        driver.navigate().refresh();
+    }
     public void visit(String url){
         driver.get(BASE_URL_PROJECT + url);
     }
