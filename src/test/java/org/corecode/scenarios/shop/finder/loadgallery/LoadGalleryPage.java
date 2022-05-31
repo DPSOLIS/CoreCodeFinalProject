@@ -10,7 +10,6 @@ public class LoadGalleryPage extends BaseTest {
 
     private static final String ROUTE_INDEX_RESOURCE = "/challenge/index.html";
     private static final String BUTTON_START_STYLE_QUIZ = "//button[@class='cfl740-welcome-page__card__continue-button']";
-
     public static final String PRINCIPAL_GRID_BY_XPATH = "//div[@class='cfl740-style-grid-scroll cfl740-style-grid-scroll--finder']";
     public static final String STYLE_GRID_BY_XPATH = "//div[@class='cfl740-style-grid']";
     public static final String OPTIONS_ROOMS_BY_XPATH = "div[@class='cfl740-style']";
