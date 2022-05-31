@@ -28,8 +28,8 @@ public class DislikePage extends BaseTest {
 
     public static final String CLEARLIKES_BUTTON_BY_XPATH = "//button[@class='cfl740-loved-styles__filters__button']";
 
-    public DislikePage(Method method) {
-        super(method);
+    public DislikePage() {
+
     }
 
     public void startStyleQuiz(){

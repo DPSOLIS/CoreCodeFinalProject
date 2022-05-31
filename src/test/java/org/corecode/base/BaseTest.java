@@ -16,15 +16,15 @@ public class BaseTest {
     private JavascriptExecutor js;
     private static  final String BASE_URL_PROJECT = "https://test-sites-qa.s3.us-west-1.amazonaws.com";
 
-    public BaseTest(Method method){
+    public BaseTest(){
         try {
-            this.WebDriverConnection(method);
+            this.WebDriverConnection();
         }catch (MalformedURLException e){
             System.out.println(e.getMessage());
         }
     }
 
-    public void WebDriverConnection(Method method) throws MalformedURLException {
+    public void WebDriverConnection() throws MalformedURLException {
 //        MutableCapabilities sauceOption = new MutableCapabilities();
 //        sauceOption.setCapability("username","oauth-deivisjl-a56b8");
 //        sauceOption.setCapability("accessKey","4f538016-9b98-419d-bcb3-ba28ceec8a96");
@@ -37,7 +37,7 @@ public class BaseTest {
 //        this.driver = new RemoteWebDriver(url,options);
         WebDriverManager.chromedriver().setup();
         ChromeOptions chromeOptions = new ChromeOptions();
-        chromeOptions.addArguments("--headless");
+        //chromeOptions.addArguments("--headless");
         this.driver = new ChromeDriver(chromeOptions);
         this.driver.manage().window().maximize();
         this.js = (JavascriptExecutor) driver;

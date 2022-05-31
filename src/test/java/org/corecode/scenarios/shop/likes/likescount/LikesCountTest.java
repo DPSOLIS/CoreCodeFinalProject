@@ -12,9 +12,9 @@ public class LikesCountTest {
 
     private LikesCountPage likesCountPage;
 
-    @BeforeMethod(alwaysRun = true)
-    public void setup(Method method){
-        this.likesCountPage = new LikesCountPage(method);
+    @BeforeClass(alwaysRun = true)
+    public void setup(){
+        this.likesCountPage = new LikesCountPage();
         this.likesCountPage.visitPage();
     }
 

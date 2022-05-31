@@ -24,8 +24,7 @@ public class StyleFinderPage extends BaseTest {
         click(By.xpath(BUTTON_START_STYLE_QUIZ));
     }
 
-    public StyleFinderPage(Method method) {
-        super(method);
+    public StyleFinderPage(){
     }
 
     public boolean ensureChangeRoomStyleOnLike() throws InterruptedException {

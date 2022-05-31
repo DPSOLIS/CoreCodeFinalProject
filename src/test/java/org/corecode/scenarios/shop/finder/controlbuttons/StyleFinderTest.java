@@ -11,9 +11,9 @@ import java.lang.reflect.Method;
 public class StyleFinderTest {
     private StyleFinderPage styleFinderPage;
 
-    @BeforeMethod(alwaysRun = true)
-    public void setup(Method method){
-        this.styleFinderPage = new StyleFinderPage(method);
+    @BeforeClass(alwaysRun = true)
+    public void setup(){
+        this.styleFinderPage = new StyleFinderPage();
         this.styleFinderPage.visitPage();
     }
 

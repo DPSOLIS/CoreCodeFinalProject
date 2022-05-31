@@ -12,9 +12,9 @@ public class LoadGalleryTest {
 
     private LoadGalleryPage loadGalleryPage;
 
-    @BeforeMethod(alwaysRun = true)
-    public void setup(Method method){
-        this.loadGalleryPage = new LoadGalleryPage(method);
+    @BeforeClass(alwaysRun = true)
+    public void setup(){
+        this.loadGalleryPage = new LoadGalleryPage();
         this.loadGalleryPage.visitPage();
     }
 

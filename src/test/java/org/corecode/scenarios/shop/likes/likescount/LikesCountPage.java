@@ -21,8 +21,8 @@ public class LikesCountPage extends BaseTest {
     public static final String LOVED_BUTTON_BY_XPATH = "//button[@class='cfl740-style__interaction-button cfl740-style__interaction-button--love']";
     public static final String TITLE_OF_LIKE_BY_XPATH = "//span[@class='cfl740-tabs__tab__label']";
 
-    public LikesCountPage(Method method) {
-        super(method);
+    public LikesCountPage() {
+
     }
 
     public void visitPage(){

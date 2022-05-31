@@ -12,9 +12,9 @@ public class DislikeTest {
 
     private DislikePage dislikePage;
 
-    @BeforeMethod(alwaysRun = true)
-    public void setup(Method method){
-        dislikePage = new DislikePage(method);
+    @BeforeClass(alwaysRun = true)
+    public void setup(){
+        dislikePage = new DislikePage();
         dislikePage.visitPage();
     }
 

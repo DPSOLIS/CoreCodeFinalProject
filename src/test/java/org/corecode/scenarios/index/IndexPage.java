@@ -10,9 +10,7 @@ public class IndexPage extends BaseTest {
     private static final String PRINCIPAL_CARD_CLASSNAME = "//div[@class='cfl740-welcome-page__card']";
     private static final String BUTTON_START_STYLE_QUIZ = "//button[@class='cfl740-welcome-page__card__continue-button']";
 
-    public IndexPage(Method method) {
-        super(method);
-    }
+    public IndexPage() {}
 
     public boolean ensureLoadWelcomePageCard(){
         return isDisplayed(By.xpath(PRINCIPAL_CARD_CLASSNAME));

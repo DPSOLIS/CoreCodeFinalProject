@@ -20,8 +20,7 @@ public class LoadGalleryPage extends BaseTest {
     private static final String ANSWERS_LIST = "div[@class='cfl740-answer-list']";
     private static final String OPTIONS_LIST = "div[@class='cfl740-answer-item cfl740-answer-image-box cfl740-group-null']";
 
-    public LoadGalleryPage(Method method) {
-        super(method);
+    public LoadGalleryPage() {
     }
 
     public void startStyleQuiz(){
