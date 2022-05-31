@@ -4,6 +4,7 @@ import org.corecode.base.BaseTest;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
+import java.lang.reflect.Method;
 import java.util.List;
 
 public class LoadGalleryPage extends BaseTest {
@@ -18,6 +19,10 @@ public class LoadGalleryPage extends BaseTest {
     private static final String QUESTION_LIST = "div[@class='cfl740-popup cfl740-popup--no-arrow']";
     private static final String ANSWERS_LIST = "div[@class='cfl740-answer-list']";
     private static final String OPTIONS_LIST = "div[@class='cfl740-answer-item cfl740-answer-image-box cfl740-group-null']";
+
+    public LoadGalleryPage(Method method) {
+        super(method);
+    }
 
     public void startStyleQuiz(){
         click(By.xpath(BUTTON_START_STYLE_QUIZ));

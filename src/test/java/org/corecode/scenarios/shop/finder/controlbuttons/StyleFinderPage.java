@@ -4,6 +4,7 @@ import org.corecode.base.BaseTest;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
+import java.lang.reflect.Method;
 import java.util.List;
 
 public class StyleFinderPage extends BaseTest {
@@ -21,6 +22,10 @@ public class StyleFinderPage extends BaseTest {
 
     public void startStyleQuiz(){
         click(By.xpath(BUTTON_START_STYLE_QUIZ));
+    }
+
+    public StyleFinderPage(Method method) {
+        super(method);
     }
 
     public boolean ensureChangeRoomStyleOnLike() throws InterruptedException {

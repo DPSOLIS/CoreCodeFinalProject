@@ -3,14 +3,17 @@ package org.corecode.scenarios.shop.finder.controlbuttons;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+
+import java.lang.reflect.Method;
 
 public class StyleFinderTest {
     private StyleFinderPage styleFinderPage;
 
-    @BeforeClass(alwaysRun = true)
-    public void setup(){
-        this.styleFinderPage = new StyleFinderPage();
+    @BeforeMethod(alwaysRun = true)
+    public void setup(Method method){
+        this.styleFinderPage = new StyleFinderPage(method);
         this.styleFinderPage.visitPage();
     }
 

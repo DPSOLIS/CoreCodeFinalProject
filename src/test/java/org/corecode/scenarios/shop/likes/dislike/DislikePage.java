@@ -4,6 +4,7 @@ import org.corecode.base.BaseTest;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
+import java.lang.reflect.Method;
 import java.util.List;
 
 public class DislikePage extends BaseTest {
@@ -26,6 +27,10 @@ public class DislikePage extends BaseTest {
     public static final String H1_BY_TAGNAME = "h1";
 
     public static final String CLEARLIKES_BUTTON_BY_XPATH = "//button[@class='cfl740-loved-styles__filters__button']";
+
+    public DislikePage(Method method) {
+        super(method);
+    }
 
     public void startStyleQuiz(){
         click(By.xpath(BUTTON_START_STYLE_QUIZ));

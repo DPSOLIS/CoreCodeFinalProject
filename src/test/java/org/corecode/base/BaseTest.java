@@ -1,12 +1,14 @@
 package org.corecode.base;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
+import java.lang.reflect.Method;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.List;
 
 public class BaseTest {
@@ -14,13 +16,29 @@ public class BaseTest {
     private JavascriptExecutor js;
     private static  final String BASE_URL_PROJECT = "https://test-sites-qa.s3.us-west-1.amazonaws.com";
 
-    public BaseTest() {
-        this.WebDriverConnection();
+    public BaseTest(Method method){
+        try {
+            this.WebDriverConnection(method);
+        }catch (MalformedURLException e){
+            System.out.println(e.getMessage());
+        }
     }
 
-    public void WebDriverConnection(){
+    public void WebDriverConnection(Method method) throws MalformedURLException {
+//        MutableCapabilities sauceOption = new MutableCapabilities();
+//        sauceOption.setCapability("username","oauth-deivisjl-a56b8");
+//        sauceOption.setCapability("accessKey","4f538016-9b98-419d-bcb3-ba28ceec8a96");
+//        sauceOption.setCapability("name",method.getName());
+//        sauceOption.setCapability("browserVersion","latest");
+//
+//        ChromeOptions options = new ChromeOptions();
+//        options.setCapability("sauce:options",sauceOption);
+//        URL url = new URL("https://ondemand.us-west-1.saucelabs.com:443/wd/hub");
+//        this.driver = new RemoteWebDriver(url,options);
         WebDriverManager.chromedriver().setup();
-        this.driver = new ChromeDriver();
+        ChromeOptions chromeOptions = new ChromeOptions();
+        chromeOptions.addArguments("--headless");
+        this.driver = new ChromeDriver(chromeOptions);
         this.driver.manage().window().maximize();
         this.js = (JavascriptExecutor) driver;
         return;

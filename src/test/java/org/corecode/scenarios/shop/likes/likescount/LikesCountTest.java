@@ -3,15 +3,18 @@ package org.corecode.scenarios.shop.likes.likescount;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+
+import java.lang.reflect.Method;
 
 public class LikesCountTest {
 
     private LikesCountPage likesCountPage;
 
-    @BeforeClass(alwaysRun = true)
-    public void setup(){
-        this.likesCountPage = new LikesCountPage();
+    @BeforeMethod(alwaysRun = true)
+    public void setup(Method method){
+        this.likesCountPage = new LikesCountPage(method);
         this.likesCountPage.visitPage();
     }
 

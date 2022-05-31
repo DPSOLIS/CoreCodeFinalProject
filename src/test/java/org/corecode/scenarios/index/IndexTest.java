@@ -3,14 +3,17 @@ package org.corecode.scenarios.index;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+
+import java.lang.reflect.Method;
 
 public class IndexTest {
     private IndexPage indexPage;
 
-    @BeforeClass(alwaysRun = true)
-    public void setup(){
-        this.indexPage = new IndexPage();
+    @BeforeMethod(alwaysRun = true)
+    public void setup(Method method){
+        this.indexPage = new IndexPage(method);
         this.indexPage.visitPage();
     }
 

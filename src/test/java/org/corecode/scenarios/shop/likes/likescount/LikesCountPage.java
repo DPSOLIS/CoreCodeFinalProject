@@ -4,6 +4,7 @@ import org.corecode.base.BaseTest;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
+import java.lang.reflect.Method;
 import java.util.List;
 
 public class LikesCountPage extends BaseTest {
@@ -19,6 +20,10 @@ public class LikesCountPage extends BaseTest {
     public static final String DIV_CONTROL_BUTTON_BY_XPATH = "//div[@class='cfl740-style__controls']";
     public static final String LOVED_BUTTON_BY_XPATH = "//button[@class='cfl740-style__interaction-button cfl740-style__interaction-button--love']";
     public static final String TITLE_OF_LIKE_BY_XPATH = "//span[@class='cfl740-tabs__tab__label']";
+
+    public LikesCountPage(Method method) {
+        super(method);
+    }
 
     public void visitPage(){
         this.visit(ROUTE_INDEX_RESOURCE);
