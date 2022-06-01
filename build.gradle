@@ -17,17 +17,9 @@ dependencies {
     testImplementation "org.testng:testng:7.1.0"
 }
 
-ext{
-    if (!project.hasProperty('suiteFile')) {
-        suiteFile = 'src/test/resources/StyleQuizSuite.xml'
-    }
-}
-
 test {
     useTestNG(){
-        if (project.hasProperty('suite1')){
-            suites suiteFile
-        }
+        suites './src/test/resources/StyleQuizSuite.xml'
     }
     testLogging{
         events "PASSED", "FAILED", "SKIPPED"
