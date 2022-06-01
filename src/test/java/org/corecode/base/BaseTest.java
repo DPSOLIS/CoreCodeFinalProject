@@ -29,7 +29,6 @@ public class BaseTest {
         MutableCapabilities sauceOption = new MutableCapabilities();
         EnvironmentVariables props = new EnvironmentVariables();
 
-        System.out.println("READING... " + props.env().getProperty("SAUCELABS_USERNAME"));
         sauceOption.setCapability("username",props.env().getProperty("SAUCELABS_USERNAME"));
         sauceOption.setCapability("accessKey",props.env().getProperty("SAUCELABS_ACCESSKEY"));
         sauceOption.setCapability("browserVersion",props.env().getProperty("SAUCELABS_BROWSER_VERSION"));

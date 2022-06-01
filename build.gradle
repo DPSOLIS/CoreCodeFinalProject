@@ -24,5 +24,6 @@ test {
     testLogging{
         events "PASSED", "FAILED", "SKIPPED"
     }
+
     maxHeapSize = '1G'
 }
