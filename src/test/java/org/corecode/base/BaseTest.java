@@ -1,5 +1,6 @@
 package org.corecode.base;
 
+import common.EnvironmentVariables;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -25,20 +26,19 @@ public class BaseTest {
     }
 
     public void WebDriverConnection() throws MalformedURLException {
-//        MutableCapabilities sauceOption = new MutableCapabilities();
-//        sauceOption.setCapability("username","oauth-deivisjl-a56b8");
-//        sauceOption.setCapability("accessKey","4f538016-9b98-419d-bcb3-ba28ceec8a96");
-//        sauceOption.setCapability("name",method.getName());
-//        sauceOption.setCapability("browserVersion","latest");
-//
-//        ChromeOptions options = new ChromeOptions();
-//        options.setCapability("sauce:options",sauceOption);
-//        URL url = new URL("https://ondemand.us-west-1.saucelabs.com:443/wd/hub");
-//        this.driver = new RemoteWebDriver(url,options);
-        WebDriverManager.chromedriver().setup();
-        ChromeOptions chromeOptions = new ChromeOptions();
-        //chromeOptions.addArguments("--headless");
-        this.driver = new ChromeDriver(chromeOptions);
+        MutableCapabilities sauceOption = new MutableCapabilities();
+        EnvironmentVariables props = new EnvironmentVariables();
+
+        System.out.println("READING... " + props.env().getProperty("SAUCELABS_USERNAME"));
+        sauceOption.setCapability("username",props.env().getProperty("SAUCELABS_USERNAME"));
+        sauceOption.setCapability("accessKey",props.env().getProperty("SAUCELABS_ACCESSKEY"));
+        sauceOption.setCapability("browserVersion",props.env().getProperty("SAUCELABS_BROWSER_VERSION"));
+
+        ChromeOptions options = new ChromeOptions();
+        options.setCapability("sauce:options",sauceOption);
+        URL url = new URL("https://ondemand.us-west-1.saucelabs.com:443/wd/hub");
+
+        this.driver = new RemoteWebDriver(url,options);
         this.driver.manage().window().maximize();
         this.js = (JavascriptExecutor) driver;
         return;

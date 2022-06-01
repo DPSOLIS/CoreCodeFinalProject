@@ -110,7 +110,6 @@ Temporary Items
 .nb-gradle
 .nb-gradle-properties
 .gradle
-build/
 classes/
 allure-results/
 out/
@@ -121,3 +120,4 @@ out/
 *.iws
 *.iml
 *.ipr
+gradle.properties

@@ -3,10 +3,7 @@ package org.corecode.scenarios.shop.likes.likescount;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-
-import java.lang.reflect.Method;
 
 public class LikesCountTest {
 
