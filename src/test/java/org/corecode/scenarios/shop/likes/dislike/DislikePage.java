@@ -14,18 +14,17 @@ public class DislikePage extends BaseTest {
     private static final String OPTIONS_BY_TAGNAME = "li";
     private static final String BUTTON_START_STYLE_QUIZ = "//button[@class='cfl740-welcome-page__card__continue-button']";
     private static final String LOVED_GRID_BY_XPATH = "//div[@class='cfl740-loved-styles__grid']";
-    public static final String ITEM_LOVED_GRID_BY_XPATH = "//div[@class='cfl740-loved-styles__style']";
-    public static final String IMAGE_WRAPPER_BY_XPATH = "//div[@class='cfl740-loved-styles__style__image-wrapper']";
-    public static final String DISLIKE_BUTTON_BY_XPATH = "//button[@class='cfl740-loved-styles__style__interaction cfl740-loved-styles__style__interaction__love']";
+    private static final String ITEM_LOVED_GRID_BY_XPATH = "//div[@class='cfl740-loved-styles__style']";
+    private static final String IMAGE_WRAPPER_BY_XPATH = "//div[@class='cfl740-loved-styles__style__image-wrapper']";
+    private static final String DISLIKE_BUTTON_BY_XPATH = "//button[@class='cfl740-loved-styles__style__interaction cfl740-loved-styles__style__interaction__love']";
     private static final String STYLE_GRID_BY_XPATH = "//div[@class='cfl740-style-grid']";
     private static final String LIST_OF_OPTIONS_BY_XPATH = "//div[@class='cfl740-style']";
     private static final String DIV_STYLE_IMAGE_WRAPPER = "//div[@class='cfl740-style__image-wrapper']";
-    public static final String DIV_CONTROL_BUTTON_BY_XPATH = "//div[@class='cfl740-style__controls']";
-    public static final String LOVED_BUTTON_BY_XPATH = "//button[@class='cfl740-style__interaction-button cfl740-style__interaction-button--love']";
-    public static final String IMAGE_LIKES_EMPTY_BY_XPATH = "//div[@class='cfl740-style-grid__no-saved']";
-    public static final String EMPTY_LIKE_BY_TEXT = "Start Liking your favorite styles";
-    public static final String H1_BY_TAGNAME = "h1";
-
+    private static final String DIV_CONTROL_BUTTON_BY_XPATH = "//div[@class='cfl740-style__controls']";
+    private static final String LOVED_BUTTON_BY_XPATH = "//button[@class='cfl740-style__interaction-button cfl740-style__interaction-button--love']";
+    private static final String IMAGE_LIKES_EMPTY_BY_XPATH = "//div[@class='cfl740-style-grid__no-saved']";
+    private static final String EMPTY_LIKE_BY_TEXT = "Start Liking your favorite styles";
+    private static final String H1_BY_TAGNAME = "h1";
     public static final String CLEARLIKES_BUTTON_BY_XPATH = "//button[@class='cfl740-loved-styles__filters__button']";
 
     public DislikePage() {

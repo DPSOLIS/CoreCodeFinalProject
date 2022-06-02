@@ -59,8 +59,8 @@ public class BaseTest {
         return element.getText();
     }
 
-    public void type(String inputText, By locator){
-        driver.findElement(locator).sendKeys(inputText);
+    public void type(String inputText, WebElement element){
+        element.sendKeys(inputText);
     }
 
     public void click(By locator){

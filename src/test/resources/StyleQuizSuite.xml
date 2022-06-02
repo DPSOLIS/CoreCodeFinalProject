@@ -25,4 +25,9 @@
             <class name="org.corecode.scenarios.shop.likes.dislike.DislikeTest"/>
         </classes>
     </test>
+    <test name="search-likes" preserve-order="true">
+        <classes>
+            <class name="org.corecode.scenarios.shop.likes.searchstyle.SearchStyleTest"/>
+        </classes>
+    </test>
 </suite>
