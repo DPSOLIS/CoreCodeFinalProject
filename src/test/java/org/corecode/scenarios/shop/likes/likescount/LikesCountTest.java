@@ -3,6 +3,7 @@ package org.corecode.scenarios.shop.likes.likescount;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 public class LikesCountTest {
@@ -10,8 +11,9 @@ public class LikesCountTest {
     private LikesCountPage likesCountPage;
 
     @BeforeClass(alwaysRun = true)
-    public void setup(){
-        this.likesCountPage = new LikesCountPage();
+    @Parameters({"BrowserType"})
+    public void setup(String browserType){
+        this.likesCountPage = new LikesCountPage(browserType);
         this.likesCountPage.visitPage();
     }
 

@@ -23,6 +23,9 @@ public class SearchStylePage extends BaseTest {
     private static final String STYLE_INFO_BY_XPATH = "//div[@class='cfl740-loved-styles__style__info']";
     public static final String STYLE_INFO_NAME_BY_XPATH = "//p[@class='cfl740-loved-styles__style__name']";
 
+    public SearchStylePage(String browserType){
+        super(browserType);
+    }
     public void startStyleQuiz(){
         click(By.xpath(BUTTON_START_STYLE_QUIZ));
     }

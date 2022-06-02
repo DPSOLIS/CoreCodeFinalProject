@@ -1,10 +1,7 @@
 package org.corecode.scenarios.shop.finder.controlbuttons;
 
 import org.testng.Assert;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 import java.lang.reflect.Method;
 
@@ -12,15 +9,16 @@ public class StyleFinderTest {
     private StyleFinderPage styleFinderPage;
 
     @BeforeClass(alwaysRun = true)
-    public void setup(){
-        this.styleFinderPage = new StyleFinderPage();
+    @Parameters({"BrowserType"})
+    public void setup(String browserType){
+        this.styleFinderPage = new StyleFinderPage(browserType);
         this.styleFinderPage.visitPage();
     }
 
     @Test(priority = 1)
     public void changeRoomStyleOnLike() throws InterruptedException {
         styleFinderPage.startStyleQuiz();
-        Thread.sleep(2000);
+        Thread.sleep(3000);
         Assert.assertFalse(styleFinderPage.ensureChangeRoomStyleOnLike());
     }
 

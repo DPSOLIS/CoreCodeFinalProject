@@ -1,10 +1,7 @@
 package org.corecode.scenarios.shop.finder.loadgallery;
 
 import org.testng.Assert;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 import java.lang.reflect.Method;
 
@@ -13,8 +10,9 @@ public class LoadGalleryTest {
     private LoadGalleryPage loadGalleryPage;
 
     @BeforeClass(alwaysRun = true)
-    public void setup(){
-        this.loadGalleryPage = new LoadGalleryPage();
+    @Parameters({"BrowserType"})
+    public void setup(String browserType){
+        this.loadGalleryPage = new LoadGalleryPage(browserType);
         this.loadGalleryPage.visitPage();
     }
 

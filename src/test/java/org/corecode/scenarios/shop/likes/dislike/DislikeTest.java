@@ -1,10 +1,7 @@
 package org.corecode.scenarios.shop.likes.dislike;
 
 import org.testng.Assert;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 import java.lang.reflect.Method;
 
@@ -13,8 +10,9 @@ public class DislikeTest {
     private DislikePage dislikePage;
 
     @BeforeClass(alwaysRun = true)
-    public void setup(){
-        dislikePage = new DislikePage();
+    @Parameters({"BrowserType"})
+    public void setup(String browserType){
+        dislikePage = new DislikePage(browserType);
         dislikePage.visitPage();
     }
 

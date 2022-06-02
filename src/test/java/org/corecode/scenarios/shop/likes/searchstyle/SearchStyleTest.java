@@ -3,6 +3,7 @@ package org.corecode.scenarios.shop.likes.searchstyle;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 public class SearchStyleTest {
@@ -10,8 +11,9 @@ public class SearchStyleTest {
     private SearchStylePage searchStylePage;
 
     @BeforeClass(alwaysRun = true)
-    public void setup(){
-        searchStylePage = new SearchStylePage();
+    @Parameters({"BrowserType"})
+    public void setup(String browserType){
+        searchStylePage = new SearchStylePage(browserType);
         searchStylePage.visitPage();
     }
 

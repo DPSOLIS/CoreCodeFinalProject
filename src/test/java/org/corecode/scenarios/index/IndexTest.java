@@ -3,6 +3,7 @@ package org.corecode.scenarios.index;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 
@@ -10,8 +11,9 @@ public class IndexTest {
     private IndexPage indexPage;
 
     @BeforeClass(alwaysRun = true)
-    public void setup(){
-        this.indexPage = new IndexPage();
+    @Parameters({"BrowserType"})
+    public void setup(String browserType){
+        this.indexPage = new IndexPage(browserType);
         this.indexPage.visitPage();
     }
 

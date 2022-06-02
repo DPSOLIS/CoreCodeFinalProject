@@ -27,8 +27,8 @@ public class DislikePage extends BaseTest {
     private static final String H1_BY_TAGNAME = "h1";
     public static final String CLEARLIKES_BUTTON_BY_XPATH = "//button[@class='cfl740-loved-styles__filters__button']";
 
-    public DislikePage() {
-
+    public DislikePage(String browserType) {
+        super(browserType);
     }
 
     public void startStyleQuiz(){

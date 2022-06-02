@@ -5,6 +5,8 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
 import java.lang.reflect.Method;
@@ -17,15 +19,18 @@ public class BaseTest {
     private JavascriptExecutor js;
     private static  final String BASE_URL_PROJECT = "https://test-sites-qa.s3.us-west-1.amazonaws.com";
 
-    public BaseTest(){
+    public BaseTest(String browserType){
         try {
-            this.WebDriverConnection();
+            this.WebDriverConnection(browserType);
         }catch (MalformedURLException e){
             System.out.println(e.getMessage());
         }
     }
 
-    public void WebDriverConnection() throws MalformedURLException {
+    public void WebDriverConnection(String browserType) throws MalformedURLException {
+
+        URL url = new URL("https://ondemand.us-west-1.saucelabs.com:443/wd/hub");
+
         MutableCapabilities sauceOption = new MutableCapabilities();
         EnvironmentVariables props = new EnvironmentVariables();
 
@@ -33,11 +38,18 @@ public class BaseTest {
         sauceOption.setCapability("accessKey",props.env().getProperty("SAUCELABS_ACCESSKEY"));
         sauceOption.setCapability("browserVersion",props.env().getProperty("SAUCELABS_BROWSER_VERSION"));
 
-        ChromeOptions options = new ChromeOptions();
-        options.setCapability("sauce:options",sauceOption);
-        URL url = new URL("https://ondemand.us-west-1.saucelabs.com:443/wd/hub");
+        if(browserType.equals("CHROME")){
+            ChromeOptions chromeOptions = new ChromeOptions();
+            chromeOptions.setCapability("sauce:options",sauceOption);
+            this.driver = new RemoteWebDriver(url,chromeOptions);
+        }
 
-        this.driver = new RemoteWebDriver(url,options);
+        if(browserType.equals("FIREFOX")){
+            FirefoxOptions firefoxOptions = new FirefoxOptions();
+            firefoxOptions.setCapability("sauce:options",sauceOption);
+            this.driver = new RemoteWebDriver(url,firefoxOptions);
+        }
+
         this.driver.manage().window().maximize();
         this.js = (JavascriptExecutor) driver;
         return;

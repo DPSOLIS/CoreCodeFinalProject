@@ -1,31 +1,73 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 <suite name="StyleQuizSuite">
-    <test name="welcome-page-card" preserve-order="true">
+    <test name="welcome-page-card FIREFOX" preserve-order="true">
+        <parameter name="BrowserType" value="FIREFOX"></parameter>
         <classes>
             <class name="org.corecode.scenarios.index.IndexTest"/>
         </classes>
     </test>
-    <test name="control-buttons" preserve-order="true">
+    <test name="control-buttons FIREFOX" preserve-order="true">
+        <parameter name="BrowserType" value="FIREFOX"></parameter>
         <classes>
             <class name="org.corecode.scenarios.shop.finder.controlbuttons.StyleFinderTest"/>
         </classes>
     </test>
-    <test name="load-gallery" preserve-order="true">
+    <test name="load-gallery FIREFOX" preserve-order="true">
+        <parameter name="BrowserType" value="FIREFOX"></parameter>
         <classes>
             <class name="org.corecode.scenarios.shop.finder.loadgallery.LoadGalleryTest"/>
         </classes>
     </test>
-    <test name="likes-count" preserve-order="true">
+    <test name="likes-count FIREFOX" preserve-order="true">
+        <parameter name="BrowserType" value="FIREFOX"></parameter>
         <classes>
             <class name="org.corecode.scenarios.shop.likes.likescount.LikesCountTest"/>
         </classes>
     </test>
-    <test name="working-dislike" preserve-order="true">
+    <test name="working-dislike FIREFOX" preserve-order="true">
+        <parameter name="BrowserType" value="FIREFOX"></parameter>
         <classes>
             <class name="org.corecode.scenarios.shop.likes.dislike.DislikeTest"/>
         </classes>
     </test>
-    <test name="search-likes" preserve-order="true">
+    <test name="search-likes FIREFOX" preserve-order="true">
+        <parameter name="BrowserType" value="FIREFOX"></parameter>
+        <classes>
+            <class name="org.corecode.scenarios.shop.likes.searchstyle.SearchStyleTest"/>
+        </classes>
+    </test>
+    <test name="welcome-page-card CHROME" preserve-order="true">
+        <parameter name="BrowserType" value="CHROME"></parameter>
+        <classes>
+            <class name="org.corecode.scenarios.index.IndexTest"/>
+        </classes>
+    </test>
+    <test name="control-buttons CHROME" preserve-order="true">
+        <parameter name="BrowserType" value="CHROME"></parameter>
+        <classes>
+            <class name="org.corecode.scenarios.shop.finder.controlbuttons.StyleFinderTest"/>
+        </classes>
+    </test>
+    <test name="load-gallery CHROME" preserve-order="true">
+        <parameter name="BrowserType" value="CHROME"></parameter>
+        <classes>
+            <class name="org.corecode.scenarios.shop.finder.loadgallery.LoadGalleryTest"/>
+        </classes>
+    </test>
+    <test name="likes-count CHROME" preserve-order="true">
+        <parameter name="BrowserType" value="CHROME"></parameter>
+        <classes>
+            <class name="org.corecode.scenarios.shop.likes.likescount.LikesCountTest"/>
+        </classes>
+    </test>
+    <test name="working-dislike CHROME" preserve-order="true">
+        <parameter name="BrowserType" value="CHROME"></parameter>
+        <classes>
+            <class name="org.corecode.scenarios.shop.likes.dislike.DislikeTest"/>
+        </classes>
+    </test>
+    <test name="search-likes CHROME" preserve-order="true">
+        <parameter name="BrowserType" value="CHROME"></parameter>
         <classes>
             <class name="org.corecode.scenarios.shop.likes.searchstyle.SearchStyleTest"/>
         </classes>
